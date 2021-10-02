@@ -70,7 +70,7 @@ Sub yearly_change()
             
             'store first open for next ticker for next output
                 If Cells(i + 1, 3).Value = 0 Then
-                '************find next cell within that ticker with non-zero number
+                'find next cell within that ticker with non-zero number
                     Dim j As Long 'iterator
                     For j = i + 1 To 5000
                         If Cells(j, 3).Value = 0 Then
@@ -78,18 +78,8 @@ Sub yearly_change()
                         Else
                             first_open = Cells(j, 3).Value
                         End If
-                     '   If Cells(j, 1).Value = Cells(i + 1, 1).Value Then 'checks for same ticker
-  
-                       '     If Cells(j, 3).Value <> 0 Then 'find first non-zero open value
-                       '         first_open = Cells(j, 3).Value
-                       '         Exit For
-                       '
-                       '     End If
-                      '  Else
-                       ''     first_open = 0 'if all values are 0
-                      '  End If
                     Next j
-                '*************
+                
                 Else
                     first_open = Cells(i + 1, 3).Value
             
